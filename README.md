@@ -7,8 +7,8 @@ It includes scripts for training, evaluation, and serving the model through a we
 
 ### 📥 Clone the Repository
 
-    git clone https://github.com/<your-username>/SentimentAnalysis.git
-    cd SentimentAnalysis
+    git clone https://github.com/rajeev2004/Sentiment-Analysis.git
+    cd Sentiment-Analysis
 
 ### Create a Virtual Environment
 
