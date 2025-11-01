@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Sentiment Analysis</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #72EDF2 10%, #5151E5 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px #000;
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            background-color: #FF4081;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #E91E63;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Sentiment Analysis</h1>
+    <div class="form-container">
+        <form action="/predict" method="post">
+            <textarea name="text" placeholder="Enter text here..."></textarea>
+            <br>
+            <button type="submit">Predict</button>
+        </form>
+        {% if result %}
+        <div class="result">
+            <strong>Sentiment Analysis Result:</strong>
+            <div>
+                Sentiment: {{result["sentiment"]}}
+            </div>
+            <div>
+                Percentage: {{result["percentage"]}}%
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
